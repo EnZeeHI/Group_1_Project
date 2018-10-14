@@ -60,6 +60,7 @@
      <Compile Include="Assets\LeverTrigger.cs" />
      <Compile Include="Assets\Movement.cs" />
      <Compile Include="Assets\MovementP2.cs" />
+     <Compile Include="Assets\OpenDoor.cs" />
      <Compile Include="Assets\Shooting.cs" />
      <Compile Include="Assets\Weapon.cs" />
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
