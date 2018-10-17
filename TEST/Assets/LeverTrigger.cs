@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LeverTrigger : MonoBehaviour {
- public bool colliding;
+public bool Colliding;
+public bool TriggerActive;
 
 
-		void OnTriggerEnter2D(Collider2D other){
-				
-
-    		//Debug.Log(other.name);
-			//Debug.Log("Object entered a trigger");
-
-		}
+	// function OnTriggerStay - is called when two colliders overlap
+	// allows you to use the trigger if anything is touching it
 		void OnTriggerStay2D (Collider2D other){
-			//Debug.Log("object is within the trigger");
-			// var gameObject = GameObject;
-			 colliding = true;
+			
+			 Colliding = true;
 			
 		 var SpriteRenderer  = gameObject.GetComponent<SpriteRenderer>();
-			 if (Input.GetKeyDown(KeyCode.F)&& colliding==true){
+		 // checks enables and dissables the trigger, flips the sprite
+			 if (Input.GetKeyDown(KeyCode.F)&& Colliding==true){
 					 if(SpriteRenderer.flipX== false){
 					SpriteRenderer.flipX = true;
+					TriggerActive = true;
 					}
 					else {
 						SpriteRenderer.flipX = false;
+						TriggerActive = false;
 						}
 				}
 	
@@ -32,19 +30,15 @@ public class LeverTrigger : MonoBehaviour {
 
 				
 		}
+		//function OnTriggerExit2D is called  when the coliders no longer overlap
+		// makes that you cant use the trigger when you dont touch it
 		void OnTriggerExit2D(Collider2D other){
-			//Debug.Log("object is within the trigger");
-			colliding = false;
+			
+			Colliding = false;
 		}
-		
+	
 	 
-	// void update(){
-	// 	 var SpriteRenderer  = gameObject.GetComponent<SpriteRenderer>();
-	// 		 if (Input.GetKeyDown(KeyCode.F)&& colliding==true)
-	// 			{ 
-	// 				SpriteRenderer.flipX = true;
-	// 			}
-	// }
+
 
 	
 }
