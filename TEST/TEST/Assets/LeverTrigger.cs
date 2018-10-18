@@ -28,7 +28,7 @@ public bool TriggerActive;
 						SpriteRenderer.flipX = false;
 						TriggerActive = false;
 						}
-						 Debug.Log(SpriteRenderer.flipX);
+						
 				}
 	
 			
