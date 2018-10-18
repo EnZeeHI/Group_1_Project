@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour {
     public float speed;
     public float stoppingDistance;
     public Transform target;
+    public string player;
 
     void Start()
     {
@@ -21,4 +22,19 @@ public class EnemyAI : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        
+
+        MovementP2 player = hitInfo.GetComponent<MovementP2>();
+        if (player != null)
+        {   
+            Destroy(player.gameObject);
+        }
+
+
+        
+    }
+
 }

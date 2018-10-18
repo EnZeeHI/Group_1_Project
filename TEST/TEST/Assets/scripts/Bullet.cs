@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(hitInfo.name);
 
+       
         EnemyAI enemy = hitInfo.GetComponent<EnemyAI>();
         if (enemy != null)
         {

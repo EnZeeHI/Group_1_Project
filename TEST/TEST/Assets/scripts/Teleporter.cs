@@ -25,7 +25,7 @@ public class Teleporter : MonoBehaviour {
         MovementP2 Player = hitInfo.GetComponent<MovementP2>();
         if (Player != null)
         {
-            SceneManager.LoadScene("Level 2");
+            SceneManager.LoadScene("copy");
         }
 
 
