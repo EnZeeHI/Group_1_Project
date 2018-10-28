@@ -13,17 +13,17 @@ public class camera2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Player2.position.x >= -37 && Player2.position.x <= 17)
+        if (Player2.position.x >= -15 && Player2.position.x <= -5)
         {
-            transform.position = new Vector3(Player2.position.x, Player2.position.y, Player2.position.z);
+            transform.position = new Vector3(Player2.position.x, 15, Player2.position.z);
         }
-        else if (Player2.position.x <= 17)
+        else if (Player2.position.x <= -5)
         {
-            transform.position = new Vector3(-37, Player2.position.y, Player2.position.z);
+            transform.position = new Vector3(-15, 15, Player2.position.z);
         }
-        else if (Player2.position.x >= -37)
+        else if (Player2.position.x >= -15)
         {
-            transform.position = new Vector3(17, Player2.position.y, Player2.position.z);
+            transform.position = new Vector3(-5, 15, Player2.position.z);
         }
 
 

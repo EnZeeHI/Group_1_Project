@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/copy.unity
     guid: 3127de604ccf2614293ddba34ad2bb74
+  - enabled: 1
+    path: Assets/Scenes/Scene 1.unity
+    guid: 5ec0794546ff3ff43aa7f4dc5c96ed39
+  - enabled: 1
+    path: Assets/Scenes/Scene 2.unity
+    guid: 66968753ec9e6e844a2464e5ebde825d
+  - enabled: 1
+    path: Assets/Scenes/Scene 3.unity
+    guid: b9f92df0784690044aa7cb0b28a0d9ec
+  - enabled: 1
+    path: Assets/Scenes/Final Scene.unity
+    guid: 7953f5b7cfa70364581bb870180be91e
   m_configObjects: {}

@@ -6,10 +6,11 @@ public class Weapon : MonoBehaviour {
 
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public int gunHolder = 1;
+    public int gunHolder = 2;
 
 
     public float timeStamp;
+    public float cooldown;
 
 
     void Start()
@@ -23,18 +24,18 @@ public class Weapon : MonoBehaviour {
     void FixedUpdate () {
 
         if (timeStamp <= Time.time) {
-            if (Input.GetButtonDown("Fire1") && gunHolder == 1)
+            if (Input.GetButtonDown("Fire2") && gunHolder == 2)
             {
-                timeStamp = Time.time + 1;
+                timeStamp = Time.time + cooldown;
                 Shoot();
             }
         }
-        if (Input.GetButtonDown("swapGun1"))
+        if (Input.GetButtonDown("swapGun2"))
         {
             gunHolder = 2;
         }
 
-        if (Input.GetButtonDown("swapGun2"))
+        if (Input.GetButtonDown("swapGun1"))
         {
             gunHolder = 1;
         }

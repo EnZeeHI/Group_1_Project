@@ -7,8 +7,8 @@ public class Movement : MonoBehaviour {
     public int state = 0;
     public float height;
 
-    public SpriteRenderer player1sprite;
     public SpriteRenderer player2sprite;
+    public SpriteRenderer player1sprite;
     public SpriteRenderer player1charachter;
     public Transform player1body;
     public bool facing = true;
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour {
 	void Start () {
         myAnim = GetComponent<Animator>();
 
-        player1sprite.enabled = true;
+        player2sprite.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour {
         
         
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown("joystick 1 button 2"))
         {
             if (grounded)
             {
@@ -47,8 +47,8 @@ public class Movement : MonoBehaviour {
 
         if (Input.GetButtonDown("swapGun1"))
         {
-            player1sprite.enabled = false;
-            player2sprite.enabled = true;
+            player2sprite.enabled = false;
+            player1sprite.enabled = true;
         }
 
         if (Input.GetAxisRaw("Horizontal1") < 0 && facing)

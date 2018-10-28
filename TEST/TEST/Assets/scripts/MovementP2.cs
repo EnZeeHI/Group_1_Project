@@ -8,8 +8,8 @@ public class MovementP2 : MonoBehaviour
     public int state = 0;
     public float height;
 
-    public SpriteRenderer player2sprite;
     public SpriteRenderer player1sprite;
+    public SpriteRenderer player2sprite;
     public SpriteRenderer player2charachter;
     public bool facing = true;
     bool grounded = true;
@@ -21,7 +21,7 @@ public class MovementP2 : MonoBehaviour
     {
         myAnim = GetComponent<Animator>();
 
-        player2sprite.enabled = false;
+        player1sprite.enabled = true;
     }
 
     // Update is called once per frame
@@ -44,11 +44,11 @@ public class MovementP2 : MonoBehaviour
         if (Input.GetButtonDown("swapGun2"))
         {
             Debug.Log("boop");
-            player2sprite.enabled = false;
-            player1sprite.enabled = true;
+            player1sprite.enabled = false;
+            player2sprite.enabled = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown("joystick 2 button 2"))
         {
             if (grounded)
             {

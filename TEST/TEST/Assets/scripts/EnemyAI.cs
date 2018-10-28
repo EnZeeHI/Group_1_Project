@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyAI : MonoBehaviour {
 
@@ -8,10 +9,20 @@ public class EnemyAI : MonoBehaviour {
     public float stoppingDistance;
     public Transform target;
     public string player;
+    Scene scene;
+
+    public float timeStamp;
+    public float cooldown = 5;
+
+
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player2").GetComponent<Transform>();
+
+        Scene scene = SceneManager.GetActiveScene();
+
+        timeStamp = Time.time;
     }
 
     // Update is called once per frame
@@ -29,8 +40,13 @@ public class EnemyAI : MonoBehaviour {
 
         MovementP2 player = hitInfo.GetComponent<MovementP2>();
         if (player != null)
-        {   
-            Destroy(player.gameObject);
+        {
+            timeStamp = Time.time + cooldown;
+
+            
+            
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
         }
 
 
