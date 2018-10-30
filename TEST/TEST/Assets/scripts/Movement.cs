@@ -16,12 +16,12 @@ public class Movement : MonoBehaviour {
 
     Animator myAnim;
 
-    
+    private Transform  thisTransform;
 
 	// Use this for initialization
 	void Start () {
         myAnim = GetComponent<Animator>();
-
+        thisTransform= transform;
         player2sprite.enabled = false;
     }
 	
@@ -29,11 +29,11 @@ public class Movement : MonoBehaviour {
 	void Update () {
         Vector3 pos = transform.position;
         pos.x += Input.GetAxisRaw("Horizontal1") * speed * Time.deltaTime;
+        //pos.x += Input.GetAxis("Horizontal1joy") *speed * Time.deltaTime;
         transform.position = pos;
 
         myAnim.SetInteger("state", (int)Input.GetAxisRaw("Horizontal1"));
-        
-
+    
         
         
 
