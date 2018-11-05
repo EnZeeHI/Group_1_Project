@@ -14,6 +14,8 @@ public class EnemyAI2 : MonoBehaviour {
     Scene scene;
     public AudioClip DeathClip2;
 	public AudioSource DeathSource2;
+    public AudioClip EnemyDeathClip;
+    public AudioSource EnemyDeathSource;
 
     public float timeStamp;
     public float cooldown = 5;
@@ -25,6 +27,7 @@ public class EnemyAI2 : MonoBehaviour {
         Scene scene = SceneManager.GetActiveScene();
 
         DeathSource2.clip = DeathClip2;
+        EnemyDeathSource.clip=EnemyDeathClip;
 
         timeStamp = Time.time;
     }
@@ -41,6 +44,7 @@ public class EnemyAI2 : MonoBehaviour {
 
         if (dead == true)
         {
+            EnemyDeathSource.Play();
             if (timeStamp <= Time.time)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);

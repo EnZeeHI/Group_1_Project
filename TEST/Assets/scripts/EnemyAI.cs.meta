@@ -3,7 +3,12 @@ guid: a81a45c86341938408ba1a6dc1410270
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - target: {instanceID: 0}
+  - DeathClip: {fileID: 8300000, guid: 8e76b25f532b942488111e824cd1a740, type: 3}
+  - DeathSource: {instanceID: 0}
+  - EnemyDeathClip: {fileID: 8300000, guid: 261f0a1f7260ae843a136826695a34ad, type: 3}
+  - EnemyDeathSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
