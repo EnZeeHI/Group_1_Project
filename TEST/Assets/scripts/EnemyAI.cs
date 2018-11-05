@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour {
     public string player;
     public bool dead = false;
     Scene scene;
+    public AudioClip DeathClip;
+	public AudioSource DeathSource;
 
     public float timeStamp;
     public float cooldown = 5;
@@ -22,6 +24,8 @@ public class EnemyAI : MonoBehaviour {
         target = GameObject.FindGameObjectWithTag("Player2").GetComponent<Transform>();
 
         Scene scene = SceneManager.GetActiveScene();
+        
+        DeathSource.clip = DeathClip;
 
         timeStamp = Time.time;
     }
@@ -41,6 +45,7 @@ public class EnemyAI : MonoBehaviour {
 
         if (dead == true)
         {
+            
             if (timeStamp <= Time.time)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -56,9 +61,9 @@ public class EnemyAI : MonoBehaviour {
         if (player != null)
         {
             timeStamp = Time.time + cooldown;
-
+            DeathSource.Play();
             dead = true;
-
+            
             Destroy(target.gameObject);
             
                 

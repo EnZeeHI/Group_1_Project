@@ -5,6 +5,9 @@ using UnityEngine;
 public class LeverTrigger : MonoBehaviour {
 public bool Colliding;
 public bool TriggerActive;
+
+public AudioClip LeverClip;
+public AudioSource LeverSource;
 	// void update(){
 	// 	OnTriggerStay2D(Collider2D other);
 	// }
@@ -18,6 +21,8 @@ public bool TriggerActive;
 		 var SpriteRenderer  = gameObject.GetComponent<SpriteRenderer>();
 		 // checks enables and dissables the trigger, flips the sprite
 			 if (Input.GetButtonDown("Submit2") && Colliding==true){
+				
+				LeverSource.Play();
 				
 					 if(SpriteRenderer.flipX== false){
 					SpriteRenderer.flipX = true;
@@ -43,7 +48,14 @@ public bool TriggerActive;
 		}
 	
 	 
+  void Start () {
+		 LeverSource.clip = LeverClip;
+	}
+	
 
+	void Update () {
+		
+	}
 
 	
 }
